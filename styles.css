@@ -34,5 +34,8 @@ body, a:link, a:visited, a:active{
   border:20px solid red;
 }
 
+.yellow{
+  border:10px solid yellow;
+}
 
 

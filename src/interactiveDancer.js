@@ -38,23 +38,16 @@ makeInteractiveDancer.prototype.step = function(timeBetweenSteps){
       distances.push(distance);
     }
   }
+
   if (window.dancers.length > 1) {
+    var closest = dancers[min(distances)];
+    var topDelta = closest.top - this.top;
+    var leftDelta = closest.left - this.left;
+
     if (this.isMovingTowards) {
-      // need object that we're moving towards
-      var closest = dancers[min(distances)];
-      // subtract the interactive object's top and left from those of the closest object
-      var topDelta = (closest.top - this.top) / 2;
-      var leftDelta = (closest.left - this.left) / 2;
-
-      this.setPosition(this.top + topDelta, this.left + leftDelta);
-
+      this.setPosition( this.top + topDelta/2, this.left + leftDelta/2 );
     } else {
-      var closest = dancers[min(distances)];
-      var topDelta = (closest.top - this.top);
-      var leftDelta = (closest.left - this.left);
-
       this.setPosition(this.top - topDelta, this.left - leftDelta);
-
     }
     this.isMovingTowards = !this.isMovingTowards;
   }
