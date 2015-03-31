@@ -7,7 +7,8 @@ var makeDancer = function(top, left, timeBetweenSteps){
   // important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body
   this.setPosition(top, left);
-
+  this.top = top;
+  this.left = left;
   this.step(timeBetweenSteps);
 };
 
@@ -26,5 +27,7 @@ makeDancer.prototype.setPosition = function(top, left){
     top: top,
     left: left
   };
+  this.top = top;
+  this.left = left;
   this.$node.css(styleSettings);
 };

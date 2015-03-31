@@ -2,7 +2,6 @@ $(document).ready(function(){
   window.dancers = [];
 
   $(".lineUpButton").on("click", function(event){
-    console.log('test');
     for (var i=0; i<window.dancers.length; i++) {
       window.dancers[i].setPosition(i*10, 0);
     }
