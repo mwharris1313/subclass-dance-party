@@ -4,7 +4,7 @@ var makeMouseColorDancer = function(top, left, timeBetweenSteps){
   // we plan to overwrite the step function below, but we still want
   // the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
-
+  this.$node.append('<audio src="testsound.wav" autoplay></audio>');
 };
 
 makeMouseColorDancer.prototype = Object.create(makeColorDancer.prototype);
@@ -18,6 +18,8 @@ makeMouseColorDancer.prototype.step = function(timeBetweenSteps){
 
   thisNode.mouseover(function(){
     thisNode.addClass('yellow');
+    thisNode.empty();
+    thisNode.append('<audio src="testsound.wav" autoplay></audio>');
   });
 
   thisNode.mouseleave(function(){
